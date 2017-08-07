@@ -15,7 +15,8 @@ export class AppComponent {
     {active: true, nombre:'Hotel la Gracia'},
     {active: false, nombre:'Zapatería el Clavo'}
   ];
-
+  lat:number = 4.6560663;
+  lng:number = -74.0595918;
   constructor(){
 
   }
