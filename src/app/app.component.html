@@ -1,20 +1,24 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<agm-map [latitude]="lat" [longitude]="lng">
-    <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
-</agm-map>
-<hr />
-<ul>
-    <ng-container *ngFor="let lugar of lugares">
-        <li *ngIf="lugar.active">{{lugar.nombre}}</li>
-    </ng-container>
-</ul>
-<ul>
-    <ng-container *ngFor="let lugar of lugares; let i = index" [ngSwitch]="lugar.cercania">
-        <a><li contar-clicks [ngStyle]="{color: (lugar.active) ? 'black' : 'gray'}" [ngClass]="{numero_par: (i+1) % 2 !== 0}" [resaltar]="lugar.plan">
-            {{lugar.nombre}} -
-            <span *ngSwitchCase="1" [ngStyle]="{color: 'green'}">Muy Cercano</span>
-            <span *ngSwitchCase="2" [ngStyle]="{color: 'black'}">Cercano</span>
-            <span *ngSwitchCase="3" [ngStyle]="{color: 'red'}">Lejano</span>
-        </li></a>
-    </ng-container>
-</ul>
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">PlatziSquare!</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li routerLinkActive="active"><a routerLink="/lugares">Inicio <span class="sr-only">(current)</span></a></li>
+                <li routerLinkActive="active"><a routerLink="/detalle/2">Detalle</a></li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+<router-outlet></router-outlet>
