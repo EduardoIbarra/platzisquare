@@ -22,7 +22,7 @@ const appRoutes: Routes = [
   {path:'lugares', component: LugaresComponent},
   {path:'detalle/:id', component: DetalleComponent},
   {path:'contacto', component: ContactoComponent},
-  {path:'crear', component: CrearComponent},
+  {path:'crear/:id', component: CrearComponent},
 ];
 export const firebaseConfig = {
   apiKey: "AIzaSyCqRLh5FrTaNAw4U8HzanVF98ONe6xsN9k",
