@@ -1,1 +1,15 @@
-<h1>Detalle!</h1>
+<div class="well">
+    <a routerLink="/lugares">Lugares</a> / {{lugar.nombre}}
+</div>
+<div class="container">
+    <h1>{{lugar.nombre}}</h1>
+    <hr />
+    <small>{{lugar.distancia}} km</small>
+    <br />
+    <div class="well">
+        <p>
+            {{lugar.description}}
+        </p>
+        <b>Plan: {{lugar.plan}}</b>
+    </div>
+</div>
