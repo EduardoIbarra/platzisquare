@@ -2,7 +2,7 @@
     <agm-marker *ngFor="let lugar of lugares" [latitude]="lugar.lat" [longitude]="lugar.lng"></agm-marker>
 </agm-map>
 <hr />
-<div id="cuadrado" [@contenedorAnimable]="state"></div>
+<div id="cuadrado" [@contenedorAnimable]="state" (@contenedorAnimable.start)="animacionInicia($event)" (@contenedorAnimable.done)="animacionTermina($event)"></div>
 <a class="btn btn-default" (click)="animar()">Animar!</a>
 <div class="container">
     <div class="row">
