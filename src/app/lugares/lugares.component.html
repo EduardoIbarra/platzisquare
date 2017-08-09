@@ -1,5 +1,5 @@
-<agm-map [latitude]="lat" [longitude]="lng">
-    <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+<agm-map [latitude]="lat" [longitude]="lng" [zoom]="13">
+    <agm-marker *ngFor="let lugar of lugares" [latitude]="lugar.lat" [longitude]="lugar.lng"></agm-marker>
 </agm-map>
 <hr />
 <div class="container">
