@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import {LugaresService} from "../services/lugares.service";
-import {trigger, state, style} from "@angular/animations";
+import {trigger, state, style, transition, animate} from "@angular/animations";
 
 @Component({
     selector: 'app-lugares',
@@ -16,7 +16,9 @@ import {trigger, state, style} from "@angular/animations";
                 opacity: 1,
                 backgroundColor: 'yellow',
                 transform: 'rotate3d(5,10,20,30deg)'
-            }))
+            })),
+            transition('inicial => final', animate(1000)),
+            transition('final => inicial', animate(500)),
         ])
     ]
 })
@@ -27,6 +29,9 @@ export class LugaresComponent {
     lat:number = 4.6560663;
     lng:number = -74.0595918;
     lugares = null;
+    animar(){
+        this.state = (this.state === 'final') ? 'inicial' : 'final';
+    }
     constructor(private lugaresService: LugaresService){
         lugaresService.getLugares()
             .subscribe(lugares =>{
