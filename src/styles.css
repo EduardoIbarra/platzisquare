@@ -11,3 +11,7 @@ agm-map {
     height: 200px;
     background-color: red;
 }
+.padding{
+    padding: 10px;
+    margin-bottom: 10px;
+}
