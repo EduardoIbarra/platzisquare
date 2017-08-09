@@ -6,3 +6,8 @@ agm-map {
     background-color: aliceblue;
     color: blue;
 }
+#cuadrado{
+    width: 200px;
+    height: 200px;
+    background-color: red;
+}
