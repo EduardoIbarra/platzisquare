@@ -18,12 +18,17 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import {CrearComponent} from "./crear/crear.component";
 import {HttpModule} from "@angular/http";
 import {LinkifystrPipe} from "./pipes/linkifystr.pipe";
+import {LoginComponent} from "./login/login.component";
+import {RegistroComponent} from "./registro/registro.component";
+import {AutorizacionService} from "./services/autorizacion.service";
 const appRoutes: Routes = [
   {path:'', component: LugaresComponent},
   {path:'lugares', component: LugaresComponent},
   {path:'detalle/:id', component: DetalleComponent},
   {path:'contacto', component: ContactoComponent},
   {path:'crear/:id', component: CrearComponent},
+  {path:'login', component: LoginComponent},
+  {path:'registro', component: RegistroComponent},
 ];
 export const firebaseConfig = {
   apiKey: "AIzaSyCqRLh5FrTaNAw4U8HzanVF98ONe6xsN9k",
@@ -41,7 +46,9 @@ export const firebaseConfig = {
       LugaresComponent,
       ContactoComponent,
       CrearComponent,
-    LinkifystrPipe
+    LinkifystrPipe,
+      LoginComponent,
+      RegistroComponent
   ],
   imports: [
     BrowserModule,
@@ -56,7 +63,7 @@ export const firebaseConfig = {
     AngularFireAuthModule,
       HttpModule
   ],
-  providers: [LugaresService],
+  providers: [LugaresService, AutorizacionService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
