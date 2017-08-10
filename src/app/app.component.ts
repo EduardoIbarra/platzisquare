@@ -20,4 +20,7 @@ export class AppComponent {
           this.loggedIn = false;
         })
   }
+  logout(){
+    this.autorizacionService.logout();
+  }
 }
