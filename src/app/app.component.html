@@ -18,7 +18,7 @@
                 <li routerLinkActive="active"><a routerLink="/lugares">Inicio <span class="sr-only">(current)</span></a></li>
                 <li routerLinkActive="active"><a routerLink="/contacto">Contacto</a></li>
             </ul>
-            <ul class="nav navbar-nav navbar-right">
+            <ul class="nav navbar-nav navbar-right" *ngIf="!loggedIn">
                 <li><a routerLink="/login">Login</a></li>
                 <li><a routerLink="/registro">Registro</a></li>
             </ul>
