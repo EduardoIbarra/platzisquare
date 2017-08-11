@@ -62,7 +62,7 @@ export const firebaseConfig = {
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
-      HttpModule
+      HttpModule,
   ],
   providers: [LugaresService, AutorizacionService, MyGuard],
   bootstrap: [AppComponent]
