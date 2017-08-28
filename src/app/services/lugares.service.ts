@@ -13,6 +13,8 @@ export class LugaresService{
         {id: 4, plan: 'gratuito', cercania: 3, distancia: 10, active: false, nombre:'Sushi Suhiroll'},
         {id: 5, plan: 'pagado', cercania: 3, distancia: 35, active: true, nombre:'Hotel la Gracia'},
         {id: 6, plan: 'gratuito', cercania: 3, distancia: 120, active: false, nombre:'Zapatería el Clavo'},
+        {id: 7, plan: 'pagado', cercania: 1, distancia: 3, active: true, nombre:'Zapatería el Clavo y nada más!'},
+         {id: 8, plan: 'gratutit', cercania: 2, distancia: 4, active: true, nombre:'Zapatería el Clavo y nada más!'},
     ];
     constructor(private afDB:AngularFireDatabase, private http: Http){}
     public getLugares(){
