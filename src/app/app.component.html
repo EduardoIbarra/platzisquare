@@ -9,12 +9,9 @@
     </ng-container>
 </ul>
 <ul>
-    <ng-container *ngFor="let lugar of lugares; let i = index" [ngSwitch]="lugar.cercania">
+    <ng-container *ngFor="let lugar of lugares; let i = index">
         <a contar-clicks><li [ngStyle]="{color: (lugar.active) ? 'black' : 'gray'}" [ngClass]="{numero_par: (i+1) % 2 !== 0}" >
-            {{lugar.nombre}} -
-            <span *ngSwitchCase="1" [ngStyle]="{color: 'green'}">Muy Cercano</span>
-            <span *ngSwitchCase="2" [ngStyle]="{color: 'black'}">Cercano</span>
-            <span *ngSwitchCase="3" [ngStyle]="{color: 'red'}">Lejano</span>
+            {{lugar.nombre}}
         </li></a>
     </ng-container>
 </ul>
