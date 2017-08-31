@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import {LugaresService} from "../services/lugares.service";
 
 @Component({
     selector: 'app-crear',
@@ -7,10 +6,9 @@ import {LugaresService} from "../services/lugares.service";
 })
 export class CrearComponent {
     lugar:any = {};
-    constructor(private lugaresService: LugaresService){
+    constructor(){
 
     }
     guardarLugar(){
-        this.lugaresService.guardarLugar(this.lugar);
     }
 }

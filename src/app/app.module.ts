@@ -11,7 +11,6 @@ import {Routes, RouterModule} from "@angular/router";
 import {DetalleComponent} from "./detalle/detalle.component";
 import {LugaresComponent} from "./lugares/lugares.component";
 import {ContactoComponent} from "./contacto/contacto.component";
-import {LugaresService} from "./services/lugares.service";
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import {CrearComponent} from "./crear/crear.component";
@@ -43,7 +42,7 @@ const appRoutes: Routes = [
     AngularFireDatabaseModule,
     AngularFireAuthModule
   ],
-  providers: [LugaresService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
