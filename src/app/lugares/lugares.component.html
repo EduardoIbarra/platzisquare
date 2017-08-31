@@ -13,9 +13,9 @@
                         <li class="list-group-item">
                             {{lugar.nombre}}
                             <br />
-                            <small>Creado: {{lugar.id | date:'mediumTime' | uppercase}}</small>
+                            <small>Creado: {{lugar.id | date | uppercase}}</small>
                             <br />
-                            {{'12345.29347837' | number: '1.2-2'}}
+                            {{'12345.29347837' | number}}
                         </li>
                     </a>
                 </ng-container>
