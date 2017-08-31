@@ -1,5 +1,4 @@
 import {Injectable} from "@angular/core";
-import {AngularFireDatabase} from "angularfire2/database/database";
 @Injectable()
 export class LugaresService{
     lugares:any = [
@@ -10,7 +9,6 @@ export class LugaresService{
         {id: 5, plan: 'pagado', cercania: 3, distancia: 35, active: true, nombre:'Hotel la Gracia'},
         {id: 6, plan: 'gratuito', cercania: 3, distancia: 120, active: false, nombre:'Zapatería el Clavo'},
     ];
-    constructor(private afDB:AngularFireDatabase){}
     public getLugares(){
         return this.lugares;
     }
