@@ -12,12 +12,6 @@ export class LugaresComponent {
     lng:number = -74.0595918;
     lugares = null;
     constructor(private lugaresService: LugaresService){
-        lugaresService.getLugares()
-            .subscribe(lugares =>{
-                this.lugares = lugares.json();
-                var me = this;
-                me.lugares = Object.keys(me.lugares).map(function (key) { return me.lugares[key]; });
-                debugger;
-            });
+        this.lugares = lugaresService.getLugares();
     }
 }
