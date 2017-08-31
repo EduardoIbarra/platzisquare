@@ -19,6 +19,7 @@ export class LugaresService{
     }
     public guardarLugar(lugar){
         console.log(lugar);
-        this.afDB.database.ref('lugares/1').set(lugar);
+        lugar.id = Date.now();
+        this.lugares.push(lugar);
     }
 }
