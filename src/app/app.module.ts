@@ -22,50 +22,63 @@ import {LoginComponent} from "./login/login.component";
 import {RegistroComponent} from "./registro/registro.component";
 import {AutorizacionService} from "./services/autorizacion.service";
 import {MyGuard} from "./services/my-guard.service";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
+import {NgHttpLoaderModule} from "ng-http-loader/ng-http-loader.module";
+import {ToasterModule} from "angular2-toaster";
+import {MyInterceptor} from "./services/my.interceptor";
 const appRoutes: Routes = [
-  {path:'', component: LugaresComponent},
-  {path:'lugares', component: LugaresComponent},
-  {path:'detalle/:id', component: DetalleComponent},
-  {path:'contacto', component: ContactoComponent},
-  {path:'crear/:id', component: CrearComponent, canActivate:[MyGuard]},
-  {path:'login', component: LoginComponent},
-  {path:'registro', component: RegistroComponent},
+    {path:'', component: LugaresComponent},
+    {path:'lugares', component: LugaresComponent},
+    {path:'detalle/:id', component: DetalleComponent},
+    {path:'contacto', component: ContactoComponent},
+    {path:'crear/:id', component: CrearComponent, canActivate:[MyGuard]},
+    {path:'login', component: LoginComponent},
+    {path:'registro', component: RegistroComponent},
 ];
 export const firebaseConfig = {
-  apiKey: "AIzaSyCqRLh5FrTaNAw4U8HzanVF98ONe6xsN9k",
-  authDomain: "platzisquare.firebaseapp.com",
-  databaseURL: "https://platzisquare.firebaseio.com",
-  storageBucket: "platzisquare.appspot.com",
-  messagingSenderId: "876436758177"
+    apiKey: "AIzaSyCqRLh5FrTaNAw4U8HzanVF98ONe6xsN9k",
+    authDomain: "platzisquare.firebaseapp.com",
+    databaseURL: "https://platzisquare.firebaseio.com",
+    storageBucket: "platzisquare.appspot.com",
+    messagingSenderId: "876436758177"
 };
 @NgModule({
-  declarations: [
-    AppComponent,
-      ResaltarDirective,
-      ContarClicksDirective,
-      DetalleComponent,
-      LugaresComponent,
-      ContactoComponent,
-      CrearComponent,
-    LinkifystrPipe,
-      LoginComponent,
-      RegistroComponent
-  ],
-  imports: [
-    BrowserModule,
-      FormsModule,
-    AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyCiGsoFevMN2J-dXWtD_31AN4UkraR4Hq0'
-    }),
-    BrowserAnimationsModule,
-      RouterModule.forRoot(appRoutes),
-    AngularFireModule.initializeApp(firebaseConfig),
-    AngularFireDatabaseModule,
-    AngularFireAuthModule,
-      HttpModule,
-      ReactiveFormsModule
-  ],
-  providers: [LugaresService, AutorizacionService, MyGuard],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        ResaltarDirective,
+        ContarClicksDirective,
+        DetalleComponent,
+        LugaresComponent,
+        ContactoComponent,
+        CrearComponent,
+        LinkifystrPipe,
+        LoginComponent,
+        RegistroComponent
+    ],
+    imports: [
+        BrowserModule,
+        FormsModule,
+        AgmCoreModule.forRoot({
+            apiKey: 'AIzaSyCiGsoFevMN2J-dXWtD_31AN4UkraR4Hq0'
+        }),
+        BrowserAnimationsModule,
+        RouterModule.forRoot(appRoutes),
+        AngularFireModule.initializeApp(firebaseConfig),
+        AngularFireDatabaseModule,
+        AngularFireAuthModule,
+        HttpModule,
+        ReactiveFormsModule,
+        HttpClientModule,
+        NgHttpLoaderModule,
+        ToasterModule
+    ],
+    providers: [LugaresService, AutorizacionService, MyGuard,
+        {
+            provide: HTTP_INTERCEPTORS,
+            useClass: MyInterceptor,
+            multi: true
+        }
+    ],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -38,6 +38,7 @@ export class LugaresComponent {
     }
     constructor(private lugaresService: LugaresService){
         lugaresService.getLugares()
+            .valueChanges()
             .subscribe(lugares =>{
                 this.lugares = lugares;
                 var me = this;

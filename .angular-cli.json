@@ -19,6 +19,7 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
+        "../node_modules/angular2-toaster/toaster.css",
         "../node_modules/bootstrap/dist/css/bootstrap.min.css",
         "styles.css"
       ],
